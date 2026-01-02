@@ -77,17 +77,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-8 px-4">
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
+          <h1 className="text-4xl font-bold text-white mb-2">
             Contact Management System
           </h1>
-          <p className="text-gray-600">Manage your contacts efficiently</p>
+          <p className="text-gray-300">Manage your contacts efficiently</p>
         </header>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+          <div className="mb-6 p-4 bg-red-900/50 border border-red-500 text-red-200 rounded-lg">
             Error: {error}
           </div>
         )}
@@ -99,8 +99,8 @@ function App() {
           
           <div>
             {loading ? (
-              <div className="bg-white rounded-lg shadow-md p-8 text-center">
-                <p className="text-gray-500">Loading contacts...</p>
+              <div className="bg-gray-800 rounded-lg shadow-2xl p-8 text-center border border-gray-700">
+                <p className="text-gray-400">Loading contacts...</p>
               </div>
             ) : (
               <ContactList 

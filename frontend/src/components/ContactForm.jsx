@@ -80,19 +80,19 @@ const ContactForm = ({ onAddContact }) => {
                       Object.keys(errors).length === 0;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Add New Contact</h2>
+    <div className="bg-gray-800 rounded-lg shadow-2xl p-6 mb-8 border border-gray-700">
+      <h2 className="text-2xl font-bold text-white mb-6">Add New Contact</h2>
       
       {showSuccess && (
-        <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+        <div className="mb-4 p-4 bg-green-900/50 border border-green-500 text-green-200 rounded">
           Contact added successfully!
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Name <span className="text-red-500">*</span>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1 text-left">
+            Name <span className="text-red-400">*</span>
           </label>
           <input
             type="text"
@@ -100,19 +100,19 @@ const ContactForm = ({ onAddContact }) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-              errors.name ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-gray-700 text-white border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 ${
+              errors.name ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="Enter full name"
           />
           {errors.name && (
-            <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+            <p className="mt-1 text-sm text-red-400">{errors.name}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email <span className="text-red-500">*</span>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1 text-left">
+            Email <span className="text-red-400">*</span>
           </label>
           <input
             type="email"
@@ -120,19 +120,19 @@ const ContactForm = ({ onAddContact }) => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-              errors.email ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-gray-700 text-white border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 ${
+              errors.email ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="Enter email address"
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+            <p className="mt-1 text-sm text-red-400">{errors.email}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-            Phone <span className="text-red-500">*</span>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1 text-left">
+            Phone <span className="text-red-400">*</span>
           </label>
           <input
             type="tel"
@@ -140,18 +140,18 @@ const ContactForm = ({ onAddContact }) => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-              errors.phone ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-gray-700 text-white border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 ${
+              errors.phone ? 'border-red-500' : 'border-gray-600'
             }`}
             placeholder="Enter 10-digit phone number"
           />
           {errors.phone && (
-            <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+            <p className="mt-1 text-sm text-red-400">{errors.phone}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1 text-left">
             Message
           </label>
           <textarea
@@ -160,7 +160,7 @@ const ContactForm = ({ onAddContact }) => {
             value={formData.message}
             onChange={handleChange}
             rows="4"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
             placeholder="Enter your message (optional)"
           />
         </div>
@@ -171,7 +171,7 @@ const ContactForm = ({ onAddContact }) => {
           className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition-colors ${
             isFormValid
               ? 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
-              : 'bg-gray-400 cursor-not-allowed'
+              : 'bg-blue-600 cursor-not-allowed'
           }`}
         >
           Add Contact
